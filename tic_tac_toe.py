@@ -1,6 +1,6 @@
 # Author: Silas Accles
 # Created: June 6, 2024
-# Last Modified: December 28, 2024
+# Last Modified: January 12, 2024
 
 from random import choice
 from time import sleep
@@ -12,7 +12,7 @@ game_board = [" " for field in range(9)]
 def display_game_board():
     """Display an ASCII representation of the tic tac toe board."""
 
-    # ASCII representation of the tic tac toe board at any time.
+    # Real-time, ASCII representation of the tic tac toe board.
     print(
         f"""
     {game_board[0]}|{game_board[1]}|{game_board[2]}
@@ -48,6 +48,13 @@ def validate_computer_move(computer_move):
     """
     Return True if the computer's move is valid or 
     False if the computer's move is invalid.
+    
+    Arguments:  
+        computer_move (int): the computer's chosen move
+
+    Returns:
+        True if the computer's move is valid or False
+        if the computer's move is invalid
     """
 
     # If the field on the tic tac toe board is empty,
@@ -66,6 +73,13 @@ def validate_user_move(user_move):
     """
     Return True if the user's move is valid or 
     False if the user's move is invalid.
+    
+    Arguments:  
+        user_move (int): the user's chosen move
+
+    Returns:
+        True if the user's move is valid or False
+        if the user's move is invalid
     """
 
     # If the user's move is in the proper range and the tic tac toe field
@@ -85,7 +99,12 @@ def validate_user_move(user_move):
 
 
 def update_game_board_computer(computer_move):
-    """Update the game board with the computer's move."""
+    """
+    Update the game board with the computer's move.
+
+    Arguments:
+        computer_move (int): the computer's move
+    """
 
     # Keep getting a new move until the move is valid.
     while validate_computer_move(computer_move) == False:
@@ -96,7 +115,12 @@ def update_game_board_computer(computer_move):
 
 
 def update_game_board_user(user_move):
-    """Update the game board with the user's move."""
+    """
+    Update the game board with the user's move.
+
+    Arguments:
+        user_move (int): the user's move
+    """
 
     # Keep prompting the user for a new move until the move is valid.
     while validate_user_move(user_move) == False:
